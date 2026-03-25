@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+
+# Build output (will be built inside Docker)
+dist
+
+# Environment files - keep .env.example for reference
+.env
+.env.local
+.env.*.local
+# Note: In production, mount .env via docker-compose or use secrets
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database files
+*.db
+*.sqlite
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test files
+test-*.ts
+*.test.ts
+*.spec.ts
+
+# Documentation (keep README for reference)
+*.md
+!README.md
+
+# Git
+.git
+.gitignore
+
+# Docker files (not needed in image)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Deployment configs (will be mounted or injected)
+nginx.conf
+deploy/
