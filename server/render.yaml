@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: custom-bookmark-backend
+    env: node
+    region: singapore
+    plan: starter
+    buildCommand: npm run build
+    startCommand: sh scripts/migrate-and-start.sh
+    # 环境变量
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      # 数据库配置 - 需要在部署后配置Turso
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true  # Render会自动生成
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CORS_ORIGIN
+        sync: false  # 部署后设置为前端URL
+      - key: USE_LOCAL_SQLITE
+        value: false
+    # 健康检查
+    healthCheckPath: /health
+    # 实例类型（免费版使用Standard）
+    instanceType: standard

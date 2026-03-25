@@ -55,10 +55,10 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", "data:", "https:"],
       scriptSrc: ["'self'"],
-    },
+    }
   },
-  crossOriginEmbedderPolicy: false,
-});
+  crossOriginEmbedderPolicy: { policy: "credentialless" }
+}));
 
 // Rate limiting
 const limiter = rateLimit({

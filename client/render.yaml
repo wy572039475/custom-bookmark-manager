@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: custom-bookmark-frontend
+    env: static
+    buildCommand: npm run build
+    publishPath: dist
+    # 环境变量
+    envVars:
+      - key: VITE_API_URL
+        sync: false  # 需要在部署后手动设置为后端URL
+    # 健康检查
+    healthCheckPath: /
+    # 资源限制（免费版）
+    plan: starter
+    # 区域选择（选择离用户近的）
+    region: singapore
