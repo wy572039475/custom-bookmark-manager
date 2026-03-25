@@ -1,7 +1,7 @@
 {
-  "name": "bookmark-server",
+  "name": "custom-bookmark-server",
   "version": "1.0.0",
-  "description": "收藏夹系统后端API",
+  "description": "自定义书签管理系统后端API",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",

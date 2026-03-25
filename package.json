@@ -1,7 +1,7 @@
 {
-  "name": "bookmark-system",
+  "name": "custom-bookmark-system",
   "version": "1.0.0",
-  "description": "全栈收藏夹系统",
+  "description": "自定义书签管理系统",
   "scripts": {
     "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
     "client:dev": "cd client && npm run dev",

@@ -1,6 +1,6 @@
-# 收藏夹系统 - 后端API
+# 自定义书签管理系统 - 后端API
 
-基于 Node.js + Express + PostgreSQL 的收藏夹管理系统后端。
+基于 Node.js + Express + PostgreSQL 的书签管理系统后端。
 
 ## 技术栈
 
