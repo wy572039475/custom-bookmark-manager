@@ -1,4 +1,0 @@
-{
-  "buildCommand": "prisma generate",
-  "output": "server/api"
-}
