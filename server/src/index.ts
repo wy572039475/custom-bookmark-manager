@@ -74,10 +74,17 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
+// Health check (支持两个路径：/health 和 /api/health)
+const healthCheck = (req: express.Request, res: express.Response) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    environment: env.nodeEnv,
+    database: process.env.TURSO_DATABASE_URL ? 'turso' : 'local'
+  });
+};
+app.get('/health', healthCheck);
+app.get('/api/health', healthCheck);
 
 // API Routes
 app.use('/api/auth', authRoutes);

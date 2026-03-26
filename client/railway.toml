@@ -1,0 +1,7 @@
+[build]
+builder = "STATIC"
+buildCommand = "npm install && npm run build"
+outputDirectory = "dist"
+
+[deploy]
+# Railway 静态站点配置

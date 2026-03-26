@@ -7,6 +7,7 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
+    "start:railway": "tsx src/db/migrate-sqlite.ts && node dist/index.js",
     "db:migrate": "tsx src/db/migrate.ts",
     "db:migrate-device": "tsx src/db/migrate-to-device.ts",
     "db:migrate:turso": "tsx src/db/migrate-sqlite.ts",
