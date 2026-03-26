@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/api/**/*.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  {
+      "src": "server/**/*.json",
+      "use": "@vercel/node"
+    }
+  ],
+  {
+      "src": "server/.env*",
+      "use": "@vercel/node"
+    }
+  ],
+  {
+      "src": "server/src/db/*.ts",
+      "use": "@vercel/node"
+    }
+  ]
+  ],
+  "env": {
+    "TURSO_DATABASE_URL": "libsql://bookmark-db-wy572039475.aws-ap-northeast-1.turso.io",
+    "TURSO_AUTH_TOKEN": "@turso-auth-token",
+    "JWT_SECRET": "@jwt-secret",
+    "CORS_ORIGIN": "*"
+  },
+  "build": {
+    "env": {
+    "NODE_ENV": "production"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Cache-Control": "s-maxage=3600, public"
+      },
+      "dest": "/api/$1"
+    }
+  ]
+}
